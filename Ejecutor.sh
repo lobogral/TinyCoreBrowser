@@ -14,7 +14,7 @@ then
   echo '  </body>' >> pagina.html
   echo '</html>' >> pagina.html
   cp $1 juego.swf
-  chromium-browser pagina.html
+  firefox pagina.html
   rm juego.swf
   rm pagina.html
 else
