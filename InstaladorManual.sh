@@ -1,3 +1,5 @@
+sed -i '1c\http://distro.ibiblio.org/tinycorelinux/' /opt/tcemirror
+
 echo -e "n\np\n1\n\n\na\n1\nw" | sudo fdisk /dev/sda
 
 mkfs.ext4 /dev/sda1
