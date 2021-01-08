@@ -1,10 +1,10 @@
 ####################################################################################
 # Actualizaciones
 ####################################################################################
-# Interfaz grafica
-tce-load -wi Xvesa aterm flwm_topside wbar
 # Repositorio de posibles instalaciones
 sed -i '1c\http://distro.ibiblio.org/tinycorelinux/' /opt/tcemirror
+# Interfaz grafica
+tce-load -wi Xvesa aterm flwm_topside wbar
 # Resolusion de pantalla
 sed -i 's/1024x768/800x600/' /home/tc/.xsession
 # Teclado latino
