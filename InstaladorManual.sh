@@ -26,3 +26,7 @@ echo "KERNEL /tce/boot/vmlinuz" >> extlinux.conf
 echo "INITRD /tce/boot/core.gz" >> extlinux.conf
 echo "APPEND quiet waitusb=5:${DATAUUID} tce=${DATAUUID}" >> extlinux.conf
 sudo mv extlinux.conf /mnt/sda1/tce/boot/extlinux
+
+sudo umount /mnt/sr0
+eject /dev/sr0
+sudo reboot
