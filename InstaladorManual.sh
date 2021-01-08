@@ -6,6 +6,7 @@ mkfs.ext4 /dev/sda1
 sudo rebuildfstab
 
 mount /mnt/sda1
+mount /mnt/sr0
 
 sudo mkdir -p /mnt/sda1/tce/boot
 sudo cp /mnt/sr0/boot/core.gz /mnt/sda1/tce/boot
