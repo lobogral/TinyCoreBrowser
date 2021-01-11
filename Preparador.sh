@@ -1,6 +1,6 @@
-####################################################################################
+###########################################################################
 ### Instalacion Tiny Core
-####################################################################################
+###########################################################################
 
 # Repositorio de extensiones actuales
 sed -i '1c\http://distro.ibiblio.org/tinycorelinux/' /opt/tcemirror
@@ -30,6 +30,7 @@ sudo extlinux -i /mnt/sda1/tce/boot/extlinux
 dd if=/usr/local/share/syslinux/mbr.bin of=/dev/sda
 
 # Creacion de archivo de arranque .conf en sda1
+EXTFOLDER='/mnt/sda1/tce/boot/extlinux'
 DATAUUID=$(blkid -s UUID /dev/sda1 | awk '{print $2}')
 touch extlinux.conf
 echo "DEFAULT core" >> extlinux.conf
@@ -37,15 +38,15 @@ echo "LABEL core" >> extlinux.conf
 echo "KERNEL /tce/boot/vmlinuz" >> extlinux.conf
 echo "INITRD /tce/boot/core.gz" >> extlinux.conf
 echo "APPEND quiet waitusb=5:${DATAUUID} tce=${DATAUUID}" >> extlinux.conf
-sudo mv extlinux.conf /mnt/sda1/tce/boot/extlinux
+sudo mv extlinux.conf $EXTFOLDER
 
 # Desmontar y expulsar sr0
 sudo umount /mnt/sr0
 eject /dev/sr0
 
-####################################################################################
+###########################################################################
 ### Preparacion entorno flash
-####################################################################################
+###########################################################################
 
 # Inicio guardado entorno flash
 tce-setdrive
@@ -59,7 +60,7 @@ sed -i 's/1024x768/800x600/' /home/tc/.xsession
 
 # Teclado latino
 tce-load -wi kmaps
-sudo sed -i '$a loadkmap < /usr/share/kmap/qwerty/la-latin1.kmap' /opt/bootlocal.sh
+sed -i 's,quiet,quiet kmap=qwerty/la-latin1,g' $EXTFOLDER/extlinux.conf
 
 # Navegador
 tce-load -wi minefield21
