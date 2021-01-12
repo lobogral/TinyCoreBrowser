@@ -71,9 +71,6 @@ alsactl init
 alsactl store
 sudo sed -i '$a alsactl restore' /opt/bootlocal.sh
 
-# Flash
-tce-load -wi getFlash_beta
-
 # Fin guardado entorno flash
 echo "y" | backup
 
