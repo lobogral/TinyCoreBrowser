@@ -45,10 +45,10 @@ sudo umount /mnt/sr0
 eject /dev/sr0
 
 ###########################################################################
-### Preparacion entorno flash
+### Preparacion entorno Navegador Web
 ###########################################################################
 
-# Inicio guardado entorno flash
+# Inicio guardado entorno Navegador Web
 tce-setdrive
 
 # Repositorio de extensiones actuales
@@ -71,7 +71,7 @@ alsactl init
 alsactl store
 sudo sed -i '$a alsactl restore' /opt/bootlocal.sh
 
-# Fin guardado entorno flash
+# Fin guardado entorno Navegador Web
 echo "y" | backup
 
 # Reiniciar
