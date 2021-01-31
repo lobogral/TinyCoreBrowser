@@ -9,7 +9,7 @@ sed -i '1c\http://distro.ibiblio.org/tinycorelinux/' /opt/tcemirror
 echo -e "n\np\n1\n\n\na\n1\nw" | sudo fdisk /dev/sda
 
 # Formateando /dev/sda1
-mkfs.ext4 /dev/sda1
+mkfs.ext4 -O '^64bit' -F -m 0 /dev/sda1
 sudo rebuildfstab
 
 # Montar disco de instalacion (sr0) y sda1
