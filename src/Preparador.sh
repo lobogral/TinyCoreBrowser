@@ -63,10 +63,12 @@ tce-load -wi kmaps
 sed -i 's,quiet,quiet kmap=qwerty/la-latin1,g' $EXTFOLDER/extlinux.conf
 
 # Navegador
-tce-load -wi minefield21
+tce-load -wi firefox_getLatest
+echo | firefox_getLatest.sh
+sudo sed -i '$a firefox.tcz' /mnt/sda1/tce/onboot.lst
 
 # Sonido
-tce-load -wi alsa alsa-config
+tce-load -wi alsa alsa-config pulseaudio
 alsactl init
 alsactl store
 sudo sed -i '$a alsactl restore' /opt/bootlocal.sh
