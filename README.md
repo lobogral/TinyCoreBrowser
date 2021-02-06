@@ -9,3 +9,7 @@ Los pasos para preparar el sistema operativo son:
 5. Escribir `wget https://raw.githubusercontent.com/lobogral/TinyCoreBrowser/master/src/Preparador.sh`
 6. Escribir `sh Preparador.sh`
 7. Esperar a que se reinicie la máquina virtual o PC
+
+Al terminar los pasos, e ingresar a Firefox, debe verse de la siguiente manera:
+
+<img src="assets/ImgPrincipal.png"/>
