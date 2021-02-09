@@ -1,5 +1,5 @@
 # TinyCoreBrowser
-Implementación del navegador web Firefox en Tiny core linux.
+Instalación de Tiny core linux e implementación del navegador web Firefox.
 
 Los pasos para preparar el sistema operativo son:
 1. Descargar Core linux (11 MB) a partir del link http://tinycorelinux.net/downloads.html
